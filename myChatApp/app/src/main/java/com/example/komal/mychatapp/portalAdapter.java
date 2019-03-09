@@ -36,6 +36,9 @@ public void onBindViewHolder(ViewHolder holder,final int position) {
         holder.userName.setText(portalDetailsList.get(position).getUserName());
         holder.Tag.setText(portalDetailsList.get(position).getTag());
         holder.Question.setText(portalDetailsList.get(position).getQuestion());
+        holder.connect.setText(portalDetailsList.get(position).getText());
+
+
 
 }
 
@@ -51,6 +54,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     public TextView userName;
     public TextView Tag;
     public TextView Question;
+    public TextView connect;
 
 
 
@@ -59,6 +63,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         userName =(TextView)itemView.findViewById(R.id.userName);
         Tag=(TextView)itemView.findViewById(R.id.tag);
         Question=itemView.findViewById(R.id.question_view);
+        connect=itemView.findViewById(R.id.connect);
     }
 
 

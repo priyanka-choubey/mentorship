@@ -151,6 +151,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            finish();
             return true;
         }
 
@@ -221,6 +223,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void Connect(View v){
+
         startActivity(new Intent(MainActivity.this,UsersActivity.class));
     }
 }

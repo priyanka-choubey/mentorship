@@ -75,6 +75,7 @@ public class UsersActivity extends AppCompatActivity{
         RequestQueue rQueue = Volley.newRequestQueue(UsersActivity.this);
         rQueue.add(request);
 
+
         mLayoutManager = new GridLayoutManager(this, 1);
         mRecycler.setLayoutManager(mLayoutManager);
 

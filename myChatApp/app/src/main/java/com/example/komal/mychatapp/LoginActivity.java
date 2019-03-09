@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                                         UsersDetailsActivity.password = pass;
                                         Log.e("TAG",user+" "+pass);
                                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
-
+                                        finish();
                                     }
                                     else {
                                         Toast.makeText(LoginActivity.this, "incorrect password", Toast.LENGTH_LONG).show();
