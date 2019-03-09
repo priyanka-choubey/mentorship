@@ -1,10 +1,12 @@
 package com.example.komal.mychatapp;
 
 import android.app.ProgressDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -48,6 +50,14 @@ public class UsersActivity extends AppCompatActivity{
         pd.setMessage("Loading...");
         pd.show();
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLogin);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("MentorMe");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.Black, this.getTheme()));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.Black));
+        }
         String url = "https://mychatapp-268ff.firebaseio.com/users.json";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){

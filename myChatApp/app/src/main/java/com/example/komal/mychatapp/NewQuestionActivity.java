@@ -25,7 +25,8 @@ public class NewQuestionActivity extends DialogFragment {
                 .setPositiveButton("Add Question", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                           question=etSearch.getText().toString();
+                          // question=etSearch.getText().toString();
+                        NewQuestionActivity.this.getDialog().cancel();
 
 
                     }

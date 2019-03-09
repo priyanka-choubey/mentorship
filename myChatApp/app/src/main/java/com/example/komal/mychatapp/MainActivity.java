@@ -59,7 +59,18 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        UserData = new portalDetails("Komal","coding","How to add two numbers!");
+        UserData = new portalDetails("Komal","Coding","Program to add two numbers?");
+        data.add(UserData);
+
+        UserData = new portalDetails("Aditi","Maths","What is the formula to find factorial of a number?");
+        data.add(UserData);
+
+        UserData = new portalDetails("CrazyM","Maths","What is 15 out of 25 as percentage?");
+        data.add(UserData);
+
+        UserData = new portalDetails("Komal","Maths","If a warehouse received 250 orders in April and 300 in May, what was the percentage of increase in orders from April to May?");
+        data.add(UserData);
+        UserData = new portalDetails("Aditi","Physics","How long can you survive in space without spacesuit?");
         data.add(UserData);
 
         mRecycler=findViewById(R.id.recycle);
@@ -209,4 +220,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public void Connect(View v){
+        startActivity(new Intent(MainActivity.this,UsersActivity.class));
+    }
 }

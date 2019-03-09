@@ -1,8 +1,10 @@
 package com.example.komal.mychatapp;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,15 @@ public class ChatRoomActivity extends AppCompatActivity {
         messageArea = (EditText)findViewById(R.id.messageArea);
         scrollView = (ScrollView)findViewById(R.id.scrollView);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLogin);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("MentorMe");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.Black, this.getTheme()));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(getResources().getColor(R.color.Black));
+        }
+
         Firebase.setAndroidContext(this);
         reference1 = new Firebase("https://mychatapp-268ff.firebaseio.com/messages/" + UsersDetailsActivity.username + "_" + UsersDetailsActivity.chatWith);
         reference2 = new Firebase("https://mychatapp-268ff.firebaseio.com/messages/" + UsersDetailsActivity.chatWith + "_" + UsersDetailsActivity.username);
@@ -48,6 +59,7 @@ public class ChatRoomActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String messageText = messageArea.getText().toString();
+                messageArea.setText("");
 
                 if(!messageText.equals("")){
                     Map<String, String> map = new HashMap<String, String>();
