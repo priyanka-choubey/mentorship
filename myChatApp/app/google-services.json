@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "769467566527",
+    "firebase_url": "https://mychatapp-268ff.firebaseio.com",
+    "project_id": "mychatapp-268ff",
+    "storage_bucket": "mychatapp-268ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769467566527:android:d7d709864a7891c8",
+        "android_client_info": {
+          "package_name": "com.example.komal.mychatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769467566527-ud546nlgrsuvovqe5302t095ufrsd0ch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9wDPjemOphGmCCFp29wiIlvCufBS5CPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
