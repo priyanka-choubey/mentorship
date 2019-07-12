@@ -107,3 +107,33 @@ def add_answer(request, user_id, question_id):
         answer.language = request.data['language']
         answer.save()
         return Response(AnswerSerializer(answer).data, status = status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+def get_mentor(request, user_id):
+
+        mentee=Mentee.objects.get(id=user_id)
+        mentor =mentee.mentor
+        serializer = MentorSerializer(mentor)
+        return Response(serializer.data, status = status.HTTP_200_OK)
+
+@api_view(['GET'])
+def get_mentor_by_name(request, name):
+
+        mentor=Mentor.objects.get(mentorname=name)
+        serializer = MentorSerializer(mentor)
+        return Response(serializer.data, status = status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def get_mentee_by_name(request, name):
+
+        mentee=Mentee.objects.get(menteename=name)
+        serializer = MenteeSerializer(mentee)
+        return Response(serializer.data, status = status.HTTP_200_OK)
+
+@api_view(['GET'])
+def link_mentor(request, mentor_id, mentee_id):
+
+        mentee = Mentee.objects.get(id=mentee_id)
+        mentee.mentor = Mentor.objects.get(id = mentor_id)
+        return Response(MenteeSerializer(mentee).data, status = status.HTTP_201_CREATED)
